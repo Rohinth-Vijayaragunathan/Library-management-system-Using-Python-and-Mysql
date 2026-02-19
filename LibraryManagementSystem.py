@@ -19,6 +19,10 @@ print("table user created successfully")
 cursor.execute("CREATE TABLE IF NOT EXISTS Books(book_id INT PRIMARY KEY,title VARCHAR(30),author VARCHAR(30),quantity INT)")
 print("table books created successfully")
 
+cursor.execute("""CREATE TABLE IF NOT EXISTS Issued_books( issue_id INT PRIMARY KEY AUTO_INCREMENT,user_id INT,book_id INT,issue_date DATE,
+return_date DATE,fine INT DEFAULT 0)""")
+print("table issued books created successfully)
+      
 connection.commit()
 
 def admin_login():
